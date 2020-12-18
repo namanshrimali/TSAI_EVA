@@ -15,10 +15,10 @@
  - Batchnorm normalizes the images of complete batch to ur channels hence features can be  clearly found in the images
  - Dropout is a very lazy and brutal way of removing some % age of nodes, hence has a regularization effect on the model, when some primary nodes are dropped, it forces other nodes to train to improve the accuracy
 * Did not used `Fully Connected Layers`, thus keeping the number of parameters in check
-* Used our `Ant-Man` which helped with following:
+* Used `Ant-Man` which helped with following:
   - Lesser computation requirement for reducing the number of channels 
   - Use of existing channels to create complex channels (instead of re-convolution)
-* For effective and easier decision making we used Relu activation function into our model
+* For effective and easier decision making we used Relu activation function into model
 * We didn't use any Flatten layer hence no spatial information was lost in our code
 * Used Global Average Pooling of 2x2
 
@@ -83,7 +83,7 @@ Test set: Average loss: 0.0198, Accuracy: 9940/10000 (99.40%)
 ```
 
 ## What's next
-* Model with 6k parameters got pretty close to the required accuracy, will work on that, It's always better to get the same results from less number of parameters
+* Model with 6k parameters got pretty close to the required accuracy, will work on that. It's always better to get the same results from less number of parameters
 * As per kaggle, the highest accuracy for the MNIST dataset is 99.6% - 99.8% (impossible to achieve beyond 99.8%). I'll try to achieve a stable accuracy beyond 99.4%
 
 
