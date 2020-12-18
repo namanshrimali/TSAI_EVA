@@ -31,7 +31,7 @@
 * Using BatchNormalization before non-linearity (as was suggested in the BatchNorm research paper), but opposite worked. If you know why this happened, please let me know too.
 
 ## Final Model
-I achieved `99.4%` accuracy with ~14k, ~12k and ~10k (9,954 to be exact) parameters. I'm highlighting the model which used lowest amounts of parameter. You can find other models (failures and successes).
+I achieved `99.4%` accuracy with ~18k, ~12k and ~10k (9,954 to be exact) parameters. I'm highlighting the model which used lowest amounts of parameter. You can find other models (failures and successes).
 The model with 10k parameters was only able to achieve 99.4% accuracy once (at the 18th epoch) (It got lucky)
 
 ```
