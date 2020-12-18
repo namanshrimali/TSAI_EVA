@@ -26,7 +26,7 @@
 * Using 4 layers in the network, while the parameters were kept in check, the network was only able to achieve the highest training accuracy of `99.35%` (almost had it !)
 * Expand and squeeze model in every layer (Only worked on the first layer)
 * 10%, 20%, 25%, 40% of Drop-outs
-* 6k parameters, using Expand and Squeeze in every layer, had highest training accuracy of `99.08%` (Not bad for 6k parameters though, right ?)
+* 4.7k parameters, using Expand and Squeeze in every layer, had highest training accuracy of `99.17%` (Not bad for 4.7k parameters though, right ?)
 * Keeping the Learning Rate low (tried with 0.001, 0.003, 0.005, 0.008), was able to achieve training accuracy of `99.35`
 * Using BatchNormalization before non-linearity (as was suggested in the BatchNorm research paper), but opposite worked. If you know why this happened, please let me know too.
 
