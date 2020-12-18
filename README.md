@@ -12,8 +12,8 @@
 ## What worked
 * To keep number of parameters in check, no of channels were kept 16 and below
 * Every Convolution layer were added with Batch Normalization and Dropouts
- - Batchnorm normalizes the images of complete batch to ur channels hence features can be  clearly found in the images
- - Dropout is a very lazy and brutal way of removing some % age of nodes, hence has a regularization effect on the model, when some primary nodes are dropped, it forces other nodes to train to improve the accuracy
+  - Batchnorm normalizes the images of complete batch to ur channels hence features can be  clearly found in the images
+  - Dropout is a very lazy and brutal way of removing some % age of nodes, hence has a regularization effect on the model, when some primary nodes are dropped, it forces other nodes to train to improve the accuracy
 * Did not used `Fully Connected Layers`, thus keeping the number of parameters in check
 * Used `Ant-Man` which helped with following:
   - Lesser computation requirement for reducing the number of channels 
