@@ -18,16 +18,16 @@
 * Used `Ant-Man` which helped with following:
   - Lesser computation requirement for reducing the number of channels 
   - Use of existing channels to create complex channels (instead of re-convolution)
-* For effective and easier decision making we used Relu activation function into model
-* We didn't use any Flatten layer hence no spatial information was lost in our code
+* Used Relu activation function into model for effective and easier decision making.
+* Didn't use any Flatten layer hence no spatial information was lost in code
 * Used Global Average Pooling of 2x2
 
 ## What didn't worked
-* Using 4 layers in the network, while the parameters were kept in check, the network was only able to achieve the highest training accuracy of `99.35%` (almost had it !)
+* Using 4 layers in the network. While the parameters were kept in check, the network was only able to achieve the highest training accuracy of `99.35%` (almost had it !)
 * Expand and squeeze model in every layer (Only worked on the first layer)
 * 10%, 20%, 25%, 40% of Drop-outs
 * 4.7k parameters, using Expand and Squeeze in every layer, had highest training accuracy of `99.17%` (Not bad for 4.7k parameters though, right ?)
-* Keeping the Learning Rate low (tried with 0.001, 0.003, 0.005, 0.008), was able to achieve training accuracy of `99.35`
+* Keeping the Learning Rate low (tried with 0.001, 0.003, 0.005, 0.008), was able to achieve highest training accuracy of `99.35%`
 * Using BatchNormalization before non-linearity (as was suggested in the BatchNorm research paper), but opposite worked. If you know why this happened, please let me know too.
 
 ## Final Model
@@ -83,7 +83,7 @@ Test set: Average loss: 0.0198, Accuracy: 9940/10000 (99.40%)
 ```
 
 ## What's next
-* Model with 6k parameters got pretty close to the required accuracy, will work on that. It's always better to get the same results from less number of parameters
+* Model with 4.7k parameters got pretty close to the required accuracy, will work on that. It's always better to get the same results from less number of parameters
 * As per kaggle, the highest accuracy for the MNIST dataset is 99.6% - 99.8% (impossible to achieve beyond 99.8%). I'll try to achieve a stable accuracy beyond 99.4%
 
 
