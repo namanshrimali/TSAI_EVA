@@ -14,6 +14,7 @@ class ModelLearning():
         self.test_losses = []
         self.train_acc = []
         self.test_acc = []
+        self.misclassified = []
 
     def __train(self, model, device, train_loader, optimizer, l1_enabled):
         model.train()
@@ -55,7 +56,7 @@ class ModelLearning():
             pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
             self.train_acc.append(100*correct/processed)
 
-    def __test(self, model, device, test_loader, misclassified = []):
+    def __test(self, model, device, test_loader):
         model.eval()
         test_loss = 0
         correct = 0
@@ -68,7 +69,7 @@ class ModelLearning():
 
                 for focussed_data, prediction, actual in zip(data, pred, target):
                     if prediction != actual:
-                        misclassified.append([focussed_data.cpu(), prediction[0], actual])
+                        self.misclassified.append([focussed_data.cpu(), prediction[0], actual])
 
 
                 correct += pred.eq(target.view_as(pred)).sum().item()
@@ -121,5 +122,6 @@ class ModelLearning():
             }
 
             print("--------------------------------------------------------")
+            # misguided_pred_plot(self.misclassified)
         return graph_plot_dict
 
