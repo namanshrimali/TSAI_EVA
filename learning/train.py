@@ -4,10 +4,9 @@ import torch.nn as nn
 import torch.optim as optim
 
 
-def train(model, device, train_loader, epoch, learning_rate= 0.01):
+def train(model, device, train_loader, train_loss, train_accuracy, optimizer):
     correct = 0
     processed = 0
-    optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9)
     model.train()
     criterion = nn.CrossEntropyLoss()
     pbar = tqdm(train_loader, position = 0, leave = True)
@@ -21,6 +20,7 @@ def train(model, device, train_loader, epoch, learning_rate= 0.01):
         
 
         loss = criterion(output, target)
+        train_loss.append(loss)
         loss.backward()
         optimizer.step()
 
@@ -29,7 +29,8 @@ def train(model, device, train_loader, epoch, learning_rate= 0.01):
         processed += len(data)
 
 
-        pbar.set_description(desc= f' Epoch = {epoch+1} loss={loss.item()} batch_id={batch_idx}')
+        pbar.set_description(desc= f'loss={loss.item()} batch_id={batch_idx}')
+        train_accuracy.append(100*correct/processed)
     
     print('\Train set: Accuracy: {}/{} ({:.4f}%)\n'.format(
         correct, len(train_loader.dataset),
