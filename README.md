@@ -90,18 +90,4 @@ Estimated Total Size (MB): 7.90
 ## Future aspirations
 * None :(
 ## Receptive field calculation
-Input | kernel_size | padding | stride | n_in | n_out | j_in | j_out | receptive_in | receptive_out
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Conv1 | 3 | 1 | 1 | 32 | 32 |  1 | 1 | 1 | 3
-Conv2 | 3 | 1 | 1 | 32 | 32 | 1 | 1 | 1 | 5
-MaxPool | 2 | 0 | 2 | 32 | 16 | 1 | 1 | 2 | 6
-DptwseSep1 | 3 | 1 | 1 | 16 | 16 | 2 | 2 | 2 | 10
-AntMan1 | 1 | 0 | 1 | 16 | 16 | 2 | 2 | 2 | 10
-MaxPool | 2 | 0 | 2 | 16 | 8 | 2 | 2 | 4 | 12
-DptwseSep2 | 3 | 1 | 1 | 8 | 8 | 4 | 4 | 4 | 20
-AntMan2 | 1 | 0 | 1 | 8 | 8 | 4 | 4 | 4 | 20
-DilConv | 3 | 0 | 1 | 8 | 4 | 4 | 4 | 8 | 24
-AntMan3 | 1 | 0 | 1 | 4 | 4 | 8 | 8 | 8 | 24
-Antman4 | 1 | 0 | 1 | 4 | 4 | 8 | 8 | 8 | 24
-GAP | 4 | 0 | 4 | 4 | 1 | 8 | 8 | 32 | 48
-
+![RF_Calc](images\receptive_field.png)
