@@ -90,4 +90,4 @@ Estimated Total Size (MB): 7.90
 ## Future aspirations
 * None :(
 ## Receptive field calculation
-![RF_Calc](images\receptive_field.png)
+![RF_Calc](https://github.com/namanshrimali/TSAI_EVA/blob/Assignment7-CIFAR-10/images/receptive_field.png)
