@@ -1,9 +1,29 @@
 # Assignment 8
 
-
 > Submitted by Naman Shrimali
 ---
-## Model
+
+## Target
+- Go through this repository: https://github.com/kuangliu/pytorch-cifar
+- Extract the ResNet18 model from this repository and add it to your API/repo. 
+- Use your data loader, model loading, train, and test code to train ResNet18 on Cifar10
+- Your Target is 85% accuracy. No limit on the number of epochs. Use default ResNet18 code (so params are fixed). 
+- Once done finish S8-Assignment-Solution.
+
+## Submission
+I have trained model, summary and observations and details can be found below.
+
+## Results
+- No of parameters: `11,173,962`
+- No of epochs: 35
+- Droupout: 10%
+- First training accuracy: 24.5020%
+- First validation accuracy: 37.12%
+- Highest training accuracy: 99.5500% (Epoch 35)
+- Highest validation accuracy: `87.65%` (Epoch 34) 
+---
+### Model
+Resnet-18
 ```
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
@@ -87,3 +107,14 @@ Params size (MB): 42.63
 Estimated Total Size (MB): 58.07
 ----------------------------------------------------------------
 ```
+---
+## Observations
+* Model is highly overfitting (Model is too heavy !)
+* Since high overfitting was observed, dropout of 10% had to be coded, which bumped up the highest validation accuracy to 87.65%, but still lead to overfitting
+* The loss was negative, so had to modify the model to add log_softmax of the output as the return value
+* Learning rate of 0.2, with a scheduler introduced with gamma of 0.5 and step size of 8 was introduced
+---
+## Future Aspirations
+* More image augumentations !!!
+---
+
