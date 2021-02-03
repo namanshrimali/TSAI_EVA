@@ -117,4 +117,6 @@ Estimated Total Size (MB): 58.07
 ## Future Aspirations
 * More image augumentations !!!
 ---
+### Misclassified images
+![Misclassified images](https://github.com/namanshrimali/TSAI_EVA/blob/Assignment8-ResNet-with-CIFAR/images/misclassified.png)
 
