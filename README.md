@@ -18,8 +18,8 @@ I have trained the model and summary, graphs, gradcam reports, observations and 
 * No of epochs: `50`
 * Droupout: `10%`
 * First training accuracy: 22.3060%
-* First validation accuracy: 35.62%%
-* Highest training accuracy: 90.7100% (Epoch 48)
+* First validation accuracy: 35.62%
+* Highest training accuracy: 90.71% (Epoch 48)
 * Highest validation accuracy: **89.44%** (Epoch 49) 
 * The validation accuracy settled around `89.30%` in the final epochs
 ---
