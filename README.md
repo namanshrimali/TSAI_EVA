@@ -58,5 +58,5 @@ Estimated Total Size (MB): 58.07
 
 
 ## Future Aspirations
-* Idk ! 😭
+Idk ! 😭
 ![Noooo !](http://i.huffpost.com/gen/1276800/images/o-STEVE-CARRELL-NONPROFIT-GIF-facebook.jpg)
