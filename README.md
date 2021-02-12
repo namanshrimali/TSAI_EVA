@@ -49,8 +49,8 @@ Estimated Total Size (MB): 58.07
 
 ## Observations
 * Added middle man augumentations (cutout + 10% dropout + ChannelDropout + GridDistortion + RandomCrop + HorizontalFlip) 
-* The optimal learning rate came out to be 4.10E-01. This learning rate, with SGD optimizer and scheduler as ReduceLROnPlateu managed to train the model with slight underfitting 
-* The model crossed 90% threshold (yay !)
+* The optimal learning rate came out to be 4.10E-01. This learning rate, with SGD optimizer, with momentum of 0.9 and scheduler as ReduceLROnPlateu managed to train the model with slight underfitting 
+* The model crossed 90% threshold for validation accuracy (yay !)
 
 ## Visual Analysis
 ### Misclassified Images and their gradcam reports
@@ -58,5 +58,5 @@ Estimated Total Size (MB): 58.07
 
 
 ## Future Aspirations
-* Idk ! 😭
-![Noooo !](https://tenor.com/T64d.gif)
+Idk ! 😭
+![Noooo !](http://i.huffpost.com/gen/1276800/images/o-STEVE-CARRELL-NONPROFIT-GIF-facebook.jpg)
