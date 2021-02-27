@@ -38,20 +38,19 @@ uses this new ResNet Architecture for Cifar10:
 ## Submission
 I have trained model, summary and observationsd details can be found below.
 
-**I wasn't able to achieve 90% accuracy while training on colab with batch size of 512, but I did able to achieve the same with a batch size of 128 in my local machine. As of now, I'm looking for some way that I can achieve the same through bigger batch sizes** 
 
 ---
 
 ### Results
 * No of parameters: 6,573,120
-* Batch Size: 128
+* Batch Size: 512
 * No of epochs: 24
 * Optimal Learning Rate: 7.05E-02
 * Dropout: 0%
-* First training accuracy: 52.5120%
-* First testing accuracy: 62.24%
-* Highest training accuracy: 98.8720%
-* Highest testing accuracy: 90.70%
+* First training accuracy: 47.5300%
+* First testing accuracy: 57.97%
+* Highest training accuracy: 98.5380%
+* Highest testing accuracy: 90.77%
 
 ---
 ### Model
@@ -105,7 +104,7 @@ Estimated Total Size (MB): 32.67
 ---
 ### Observations
 * Model is overfitting (obvioisly, augumentations are far lesser than what we did last time)
-* The maximum learning rate was determined by optimal lr finder, which ran for _1000 iterations_ and returned a optimal lr of _7.05E-02_. Note that this learning rate is for  batch size of 128. For batch size of 512, optimal lr was found to be _1.46E-02_, but it didn't really gave me the results I was hoping for :(
+* The maximum learning rate was determined by optimal lr finder, which ran for _300 iterations_ and returned a optimal lr of _1.19E-01_.
 ![Steepest LR](/assets/images/SteepestLR.png)
 
 * Implemented OneCycleLR with following parameters:
@@ -127,6 +126,5 @@ Estimated Total Size (MB): 32.67
 
 ---
 ## Future aspirations
-* That 90% accuracy barrier with batch size as 512 !
 * My gradcam is somehow not working for this model and gives me a weired error unrelated to real cause (that's what I think, I'm gonna correct that)
 * I need to optimize the code I wrote for the model ! I could've coded it infinitely better, but couldn't :(
