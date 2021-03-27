@@ -1,88 +1,47 @@
-# Assignment - 12
+# Assignment - 13 - YoLo
 > Submitted by Naman Shrimali
 ---
 
 ## Target
-* Assignment A:
-    * Download this [TINY IMAGENET](http://cs231n.stanford.edu/tiny-imagenet-200.zip) dataset. 
-    * Train ResNet18 on this dataset (70/30 split) for 50 Epochs. Target 50%+ Validation Accuracy. 
-    * Submit Results. Of course, you are using your own package for everything. You can look at this  for reference. 
-* Assignment B:
-    * Download 50 (min) images each of people wearing hardhat, vest, mask and boots. 
-    * Use these labels (same spelling and small letters):
-        * hardhat
-        * vest
-        * mask
-        * boots
-    * Use [this](https://towardsdatascience.com/machine-learning-algorithms-part-9-k-means-example-in-python-f2ad05ed5203) to annotate bounding boxes around the hardhat, vest, mask and boots.
-    * Download JSON file. 
-    * Describe the contents of this JSON file in FULL details (you don't need to describe all 10 instances, anyone would work). 
-    * Refer to this [tutorial](https://towardsdatascience.com/machine-learning-algorithms-part-9-k-means-example-in-python-f2ad05ed5203) . Find out the best total numbers of clusters. Upload link to your Colab File uploaded to GitHub. 
+
+* OpenCV Yolo: SOURCE
+    * Run this above code on your laptop or Colab. 
+    * Take an image of yourself, holding another object which is there in COCO data set (search for COCO classes to learn). 
+    * Run this image through the code above. 
+    * Upload the link to GitHub implementation of this
+    * Upload the annotated image by YOLO. 
+
+* Share your NEWLY annotated (same as 12, but annotated using new tool) images with Zoheb by Wednesday at midnight. Take the set back for training on Thursday.
+* Training Custom Dataset on Colab for YoloV3
+    * Refer to this Colab File: LINK
+    * Refer to this GitHub Repo
+    * Collect a dataset from the last assignment and re-annotate them. Steps are explained in the readme.md file on GitHub.
+* Once done:
+    * Download a very small (~10-30sec) video from youtube which shows your classes. 
+    * Use ffmpeg to extract frames from the video. 
+    * Upload on your drive (alternatively you could be doing all of this on your drive to save upload time)
+    * Infer on these images using detect.py file. **Modify** detect.py file if your file names do not match the ones mentioned on GitHub. 
+    ```
+    python detect.py --conf-thres 0.3 --output output_folder_name
+    ```
+    * Use ffmpeg  to convert the files in your output folder to video
+    * Upload the video to YouTube. 
+* Share the link to your GitHub project with the steps as mentioned above
+* Share the link to your YouTube video
+* Share the link of your YouTube video on LinkedIn, Instagram, etc! You have no idea how much you'd love people complimenting you! 
 
 ## Submission
----
-### Assignment A:
-I have trained the model for 50 epochs, with optimal leraning rate (calculated through lr finder) of **2.22E-01** and summary, graphs, gradcam reports for misclassified images, observations and details can be found below. I've made a seperate library - [simplif-ai](https://github.com/namanshrimali/simplif-ai) (pronounced simplifai, or simplify) -  for the boilerplate codes that can be used effectively everywhere !
+### Yolo with Coco:
+<img src = "YoloCoco/assets/me_holding_cycle.jpg" width ="300" /> <img src = "YoloCoco/assets/output.png" width ="300" />
 
-#### Results 
-* No of parameters: 11,173,962
-* No of epochs: `50`
-* Droupout: 0%
-* First training accuracy: 3.5229%
-* First validation accuracy: 5.31%
-* Highest training accuracy: 96.8986%
-* **Highest validation accuracy: 54.87%**
-* The validation accuracy settled around 54.5% in the final epochs
+It's been so long since I want to show off my brand new cycle. A "gear wali cycle" was my childhood dream.
 
-
-#### Model
-```
-================================================================
-Model: Resnet-18
-Total params: 11,173,962
-Trainable params: 11,173,962
-Non-trainable params: 0
-----------------------------------------------------------------
-Input size (MB): 0.01
-Forward/backward pass size (MB): 15.44
-Params size (MB): 42.63
-Estimated Total Size (MB): 58.07
-----------------------------------------------------------------
-```
 ---
 
-#### Observations
-* Model is highly overfitting & takes a lot of time to train (roughly 5 hours on google colab) 
-* The maximum learning rate was determined by optimal lr finder, which ran for 300 iterations and returned an optimal lr of 2.22E-01
-![Misclassified Images](assets/images/lr_finder.png)
-* Implemented OneCycleLR with following parameters:
-    * Epochs: 50
-    * Max at epoch: 10
-    * Steps per Epochs: len(trainloader) = 98
-    * Total steps : Epochs * Steps per epoch = 2352
-    * pct_start: max_at_epoch/total_epochs = 10/50
-    * Division factor: 8
-    * Final division factor: 1 (No annihlation)
+### Training Custom Dataset for YoloV3
+* It took so long to train this thing 😭
+* Added logic to save trained model on colab after every epoch. The logic saved so many days of training
+* Results can be found [here](https://www.linkedin.com/feed/update/urn:li:activity:6781471366773293056/). Do like and comment. I'm hungry for external validation
 
-### Assignment B
-* Created a dataset of in total of around 37 images, with total bounding boxes of each class is as follows:
-```
-boots      147
-hardhat    146
-vest       115
-mask        93
-Name: class, dtype: int64
-```
-* The json file of the dataset can be found [here](dataset/Construction_PPE_Dataset.json)
-* The labelled images can be found [here](dataset/images/)
-* Implemented k-means cluster algorithm and found an elbow at 4 clusters
-![K-Means elbow](assets/images/kmeans_elbow.png)
-* Visualization for clusters:
-![K-Means clusters](assets/images/kmeans_clusters.png)
-
-### Misclassified Images and their gradcam reports
-![Misclassified Images](assets/images/misclassified_gradcam.png)
-
-
-## Future Aspirations
-> I want to become a pilot !
+### Some more stuffs
+I kind of forgot to add annotated images & labels into the zip that I uploaded (I worked so hard to annotate them 😭). I wanted to train my model with my images in them too, so I created my very own script to make the dataset (coco style). You can have a look at that [here](data_collect.ipynb)
