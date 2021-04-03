@@ -25,10 +25,16 @@
 
 Input image
 
+---
+
 <img src = "assets/sample_image_mask.png" width ="300" title="MiDaS mask"/>
 
  Depth mask from Intel MiDaS
- 
+
+---
+
 <img src = "assets/sample_image_segmentation.png" width ="300" title="Segmentation mask"/> 
 
 Segmentation mask from PlanerCNN 
+
+---
